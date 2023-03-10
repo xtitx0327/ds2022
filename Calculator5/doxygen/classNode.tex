@@ -1,0 +1,67 @@
+\hypertarget{classNode}{}\doxysection{Node类 参考}
+\label{classNode}\index{Node@{Node}}
+
+
+表达式树中的结点类  
+
+
+
+
+{\ttfamily \#include $<$calculator.\+h$>$}
+
+
+
+Node 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classNode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classNode_afb4159b6d967dd22647953fd0d1767eb}{calculate\+Result}} ()
+\begin{DoxyCompactList}\small\item\em 计算以当前结点为根的子树代表的表达式结果 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNode_a86fcc8384153457dcc9bcaf65c8fbec3}\label{classNode_a86fcc8384153457dcc9bcaf65c8fbec3}} 
+int \mbox{\hyperlink{classNode_a86fcc8384153457dcc9bcaf65c8fbec3}{type}}
+\begin{DoxyCompactList}\small\item\em 存放结点类型（1——数字，2——符号） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNode_ac476222cbb5948a8073908e1f41c4835}\label{classNode_ac476222cbb5948a8073908e1f41c4835}} 
+double \mbox{\hyperlink{classNode_ac476222cbb5948a8073908e1f41c4835}{val}}
+\begin{DoxyCompactList}\small\item\em 结点数据域（结点中的数字，或符号：1——加，2——减，3——乘，4——除，5——乘方） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNode_ad4b6c854f00bbf956409c3094d87c68e}\label{classNode_ad4b6c854f00bbf956409c3094d87c68e}} 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ {\bfseries lchild}
+\item 
+\mbox{\Hypertarget{classNode_a4e44f737dfc2fa32dd80516601413faf}\label{classNode_a4e44f737dfc2fa32dd80516601413faf}} 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ {\bfseries rchild}
+\item 
+\mbox{\Hypertarget{classNode_a31443c04158059dee990eee4ceb16590}\label{classNode_a31443c04158059dee990eee4ceb16590}} 
+double \mbox{\hyperlink{classNode_a31443c04158059dee990eee4ceb16590}{res}}
+\begin{DoxyCompactList}\small\item\em 以该结点为根的子树的结果值 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表达式树中的结点类 
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{classNode_afb4159b6d967dd22647953fd0d1767eb}\label{classNode_afb4159b6d967dd22647953fd0d1767eb}} 
+\index{Node@{Node}!calculateResult@{calculateResult}}
+\index{calculateResult@{calculateResult}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{calculateResult()}{calculateResult()}}
+{\footnotesize\ttfamily bool Node\+::calculate\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+计算以当前结点为根的子树代表的表达式结果 
+
+\begin{DoxyReturn}{返回}
+返回是（1）否（0）计算成功 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{calculator_8h}{calculator.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,38 @@
+\hypertarget{classBinaryTreeNode}{}\doxysection{Binary\+Tree\+Node$<$ DT $>$ 模板类 参考}
+\label{classBinaryTreeNode}\index{BinaryTreeNode$<$ DT $>$@{BinaryTreeNode$<$ DT $>$}}
+
+
+由结点基类模板派生出的二叉树结点类模板  
+
+
+
+
+{\ttfamily \#include $<$Binary\+Tree.\+h$>$}
+
+
+
+类 Binary\+Tree\+Node$<$ DT $>$ 继承关系图\+:
+% FIG 0
+
+
+Binary\+Tree\+Node$<$ DT $>$ 的协作图\+:
+% FIG 1
+\doxysubsection*{额外继承的成员函数}
+
+
+\doxysubsection{详细描述}
+\subsubsection*{template$<$typename DT$>$\newline
+class Binary\+Tree\+Node$<$ DT $>$}
+
+由结点基类模板派生出的二叉树结点类模板 
+
+
+\begin{DoxyTemplParams}{模板参数}
+{\em DT} & 树中存放元素的数据类型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Binary\+Tree.\+h\end{DoxyCompactItemize}

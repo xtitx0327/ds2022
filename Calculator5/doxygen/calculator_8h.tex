@@ -1,0 +1,169 @@
+\hypertarget{calculator_8h}{}\doxysection{calculator.\+h 文件参考}
+\label{calculator_8h}\index{calculator.h@{calculator.h}}
+
+
+2022 $\sim$ 2023 秋冬 数据结构与算法 项目作业  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+calculator.\+h 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{calculator_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classNode}{Node}}
+\begin{DoxyCompactList}\small\item\em 表达式树中的结点类 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classExpTree}{Exp\+Tree}}
+\begin{DoxyCompactList}\small\item\em 表达式树类 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{calculator_8h_ad52d9b160b69b147d7ede28208c8faf4}{\+\_\+\+EPS}}~1e-\/6
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{calculator_8h_a460d6c83d6660dafcf717ff96aeb71ef}{real\+Equal}} (const double a, const double b)
+\begin{DoxyCompactList}\small\item\em 判断两个双精度浮点数是否“相等” \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{calculator_8h_ac40008469423fdb7004d2528952d834f}{is\+Integer}} (const double x)
+\begin{DoxyCompactList}\small\item\em 判断一个浮点数是否为整数 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{calculator_8h_ae03a2e805e958aeb3e2ed17cb7c0c2e2}\label{calculator_8h_ae03a2e805e958aeb3e2ed17cb7c0c2e2}} 
+bool \mbox{\hyperlink{calculator_8h_ae03a2e805e958aeb3e2ed17cb7c0c2e2}{is\+Legal}} (std \+::string str)
+\begin{DoxyCompactList}\small\item\em 判断表达式子串 str 是否为合法子串 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{calculator_8h_a0534d434d6c4c2dbecc895e8e02667b7}{is\+Digit}} (std \+::string str)
+\begin{DoxyCompactList}\small\item\em 判断表达式中的合法子串是否为数字 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{calculator_8h_a37dfbc7c2d511af86126ae1d0b3e826d}{quick\+Pow}} (const double a, const int b)
+\begin{DoxyCompactList}\small\item\em 利用快速幂计算 a$^\wedge$b \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{calculator_8h_ad5a06a6b79c6b6bddd23a369a408a65f}{check\+Brackets}} (std \+::string str)
+\begin{DoxyCompactList}\small\item\em 检测表达式括号是否匹配 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+2022 $\sim$ 2023 秋冬 数据结构与算法 项目作业 
+
+\begin{DoxyAuthor}{作者}
+王笑同 (\href{mailto:3210105450@zju.edu.cn}{\texttt{ 3210105450@zju.\+edu.\+cn}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{版本}
+1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{日期}
+2022-\/11-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{版权所有}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{calculator_8h_ad52d9b160b69b147d7ede28208c8faf4}\label{calculator_8h_ad52d9b160b69b147d7ede28208c8faf4}} 
+\index{calculator.h@{calculator.h}!\_EPS@{\_EPS}}
+\index{\_EPS@{\_EPS}!calculator.h@{calculator.h}}
+\doxysubsubsection{\texorpdfstring{\_EPS}{\_EPS}}
+{\footnotesize\ttfamily \#define \+\_\+\+EPS~1e-\/6}
+
+待添加功能：基本初等函数、识别表达式错误（优化）、支持常数 e 和 π（pi） 例子： 输入 1：2$^\wedge$(1 + 3)-\/5$\ast$(15.\+23)/(1 + 2)$\ast$3-\/5 输出 1：-\/65.15 输入 2：1.25 + \mbox{[}3$\ast$(1 + 2$^\wedge$2)$\ast$3-\/43\mbox{]}(4-\/2) 输出 2：5.25 输入 3：0.2$\ast$((-\/5)$^\wedge$2) 输出 3：5 输入 4：3$^\wedge$-\/1 输出 4：错误：表达式不合法！ 输入 5：3$^\wedge$(-\/1) 输出 5：0.333333 输入 6：（空字符串） 输出 6：（无） 输入 7：+3.3$\ast$5(+2-\/1)$^\wedge$2 输出 7：16.5 输入 8：3-\/(2.\+5-\/15/6)$^\wedge$(8-\/8) 输出 8：错误：0$^\wedge$0 无意义！ 输入 9：(-\/2)$^\wedge$3 输出 9：-\/8 输入 10：(-\/2)$^\wedge$3.000001 输出 10：错误：不能计算负数的非整数次幂！ 输入 11：+2(1-\/3$^\wedge$(5.\+6-\/4.\+6)) 输出 11：-\/4 输入 12：(1+\{25/5\})$^\wedge$(\mbox{[}1.\+09)+0.\+91\mbox{]} 输出 12：错误：表达式括号不匹配！ 输入 13：2$^\wedge$3$^\wedge$2 输出 13：512 输入 14：7/1-\/6+(0)-\/((9-\/7.\+5)$^\wedge$(1.\+46$\ast$(-\/4)/5.02)$^\wedge$(-\/5)+1.\+3) 输出 14：-\/1.12672 输入 15：6/4/(2$^\wedge$3.94/(5/((-\/5.\+87))/4))+(-\/9)$^\wedge$2 输出 15：80.9792 
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{calculator_8h_ad5a06a6b79c6b6bddd23a369a408a65f}\label{calculator_8h_ad5a06a6b79c6b6bddd23a369a408a65f}} 
+\index{calculator.h@{calculator.h}!checkBrackets@{checkBrackets}}
+\index{checkBrackets@{checkBrackets}!calculator.h@{calculator.h}}
+\doxysubsubsection{\texorpdfstring{checkBrackets()}{checkBrackets()}}
+{\footnotesize\ttfamily bool check\+Brackets (\begin{DoxyParamCaption}\item[{std \+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+检测表达式括号是否匹配 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 待检测的表达式串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回匹配结果 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculator_8h_a0534d434d6c4c2dbecc895e8e02667b7}\label{calculator_8h_a0534d434d6c4c2dbecc895e8e02667b7}} 
+\index{calculator.h@{calculator.h}!isDigit@{isDigit}}
+\index{isDigit@{isDigit}!calculator.h@{calculator.h}}
+\doxysubsubsection{\texorpdfstring{isDigit()}{isDigit()}}
+{\footnotesize\ttfamily bool is\+Digit (\begin{DoxyParamCaption}\item[{std \+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+判断表达式中的合法子串是否为数字 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 待判断的字符串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回是（1）否（0）为数字 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculator_8h_ac40008469423fdb7004d2528952d834f}\label{calculator_8h_ac40008469423fdb7004d2528952d834f}} 
+\index{calculator.h@{calculator.h}!isInteger@{isInteger}}
+\index{isInteger@{isInteger}!calculator.h@{calculator.h}}
+\doxysubsubsection{\texorpdfstring{isInteger()}{isInteger()}}
+{\footnotesize\ttfamily bool is\+Integer (\begin{DoxyParamCaption}\item[{const double}]{x }\end{DoxyParamCaption})}
+
+
+
+判断一个浮点数是否为整数 
+
+
+\begin{DoxyParams}{参数}
+{\em x} & 待判断的浮点数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回是否为浮点数 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculator_8h_a37dfbc7c2d511af86126ae1d0b3e826d}\label{calculator_8h_a37dfbc7c2d511af86126ae1d0b3e826d}} 
+\index{calculator.h@{calculator.h}!quickPow@{quickPow}}
+\index{quickPow@{quickPow}!calculator.h@{calculator.h}}
+\doxysubsubsection{\texorpdfstring{quickPow()}{quickPow()}}
+{\footnotesize\ttfamily double quick\+Pow (\begin{DoxyParamCaption}\item[{const double}]{a,  }\item[{const int}]{b }\end{DoxyParamCaption})}
+
+
+
+利用快速幂计算 a$^\wedge$b 
+
+
+\begin{DoxyParams}{参数}
+{\em a} & 底数（实数） \\
+\hline
+{\em b} & 指数（整数） \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回 a$^\wedge$b 的结果 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculator_8h_a460d6c83d6660dafcf717ff96aeb71ef}\label{calculator_8h_a460d6c83d6660dafcf717ff96aeb71ef}} 
+\index{calculator.h@{calculator.h}!realEqual@{realEqual}}
+\index{realEqual@{realEqual}!calculator.h@{calculator.h}}
+\doxysubsubsection{\texorpdfstring{realEqual()}{realEqual()}}
+{\footnotesize\ttfamily bool real\+Equal (\begin{DoxyParamCaption}\item[{const double}]{a,  }\item[{const double}]{b }\end{DoxyParamCaption})}
+
+
+
+判断两个双精度浮点数是否“相等” 
+
+
+\begin{DoxyParams}{参数}
+{\em a} & 浮点数 1 \\
+\hline
+{\em b} & 浮点数 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回在误差范围内是否相等 
+\end{DoxyReturn}

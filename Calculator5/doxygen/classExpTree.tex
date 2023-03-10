@@ -1,0 +1,50 @@
+\hypertarget{classExpTree}{}\doxysection{Exp\+Tree类 参考}
+\label{classExpTree}\index{ExpTree@{ExpTree}}
+
+
+表达式树类  
+
+
+
+
+{\ttfamily \#include $<$calculator.\+h$>$}
+
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classExpTree_a72651380b82cee9a0b52370d9149b394}\label{classExpTree_a72651380b82cee9a0b52370d9149b394}} 
+bool \mbox{\hyperlink{classExpTree_a72651380b82cee9a0b52370d9149b394}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em 判断树是否为空 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classExpTree_a4cb4ed6515e1e990f5199f094d7b6740}{get\+Result}} (std \+::string str, double $\ast$ret)
+\begin{DoxyCompactList}\small\item\em 将中缀表达式存储到表达式树中 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+表达式树类 
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{classExpTree_a4cb4ed6515e1e990f5199f094d7b6740}\label{classExpTree_a4cb4ed6515e1e990f5199f094d7b6740}} 
+\index{ExpTree@{ExpTree}!getResult@{getResult}}
+\index{getResult@{getResult}!ExpTree@{ExpTree}}
+\doxysubsubsection{\texorpdfstring{getResult()}{getResult()}}
+{\footnotesize\ttfamily bool Exp\+Tree\+::get\+Result (\begin{DoxyParamCaption}\item[{std \+::string}]{str,  }\item[{double $\ast$}]{ret }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+将中缀表达式存储到表达式树中 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 表达式字符串 \\
+\hline
+{\em ret} & 表达式的计算结果；若出错则置为 -\/1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回表达式是（1）否（0）计算成功 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{calculator_8h}{calculator.\+h}}\end{DoxyCompactItemize}
